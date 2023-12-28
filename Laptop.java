@@ -28,5 +28,11 @@ public class Laptop {
         return "name: " + name + ", RAM: " + totalRAM + ", Hard: " + totalHDD + ", System: " + operSys + ", price: " + price;
     }
 
+    public int getRam(){
+        return this.totalRAM;
+    }
+
+    
+
 
 }
