@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.jar.Attributes.Name;
+import java.util.stream.Stream;
 
 public class main {
     public static void main(String[] args) {
@@ -23,7 +24,6 @@ public class main {
         }
     }
 
-   
     static void filterForLaptop(Set<Laptop> laptops) {
         Map<String, String> criteria = new HashMap<>();
         // criteria.put("1", "name");
@@ -88,22 +88,42 @@ public class main {
         System.out.println(criteria);
 
     }
-    
-    public static void findByCriteries(Set<Laptop> laptops, Map<String, String> criteria){
+
+    public static void findByCriteries(Set<Laptop> laptops, Map<String, String> criteria) {
         Set<Laptop> result = new HashSet<>();
         // if (!criteria.isEmpty()){
-        //     System.out.println("Вы не ввели ни одного критерия поиска!");
-        //     printSet(laptops);
+        // System.out.println("Вы не ввели ни одного критерия поиска!");
+        // printSet(laptops);
         // }else{
-            for (Laptop laptop : laptops) {
-                if (criteria.containsKey("2")){
-                    if (laptop.getRam() >= Integer.parseInt(criteria.get("2"))){
-                        result.add(laptop);
-                    }
+        for (Laptop laptop : laptops) {
+            if (criteria.containsKey("1")) {
+                if (laptop.getName().equals(criteria.get("1"))) {
+                    result.add(laptop);
                 }
             }
-        // }
+            if (criteria.containsKey("2")) {
+                if (laptop.getRam() >= Integer.parseInt(criteria.get("2"))) {
+                    result.add(laptop);
+                }
+            }
+            if (criteria.containsKey("3")) {
+                if (laptop.getHdd() >= Integer.parseInt(criteria.get("3"))) {
+                    result.add(laptop);
+                }
+            }
+            if (criteria.containsKey("4")) {
+                if (laptop.getOperSys().equals(criteria.get("4"))) {
+                    result.add(laptop);
+                }
+            }
+            if (criteria.containsKey("5")) {
+                if (laptop.getPrice() >= Integer.parseInt(criteria.get("5"))) {
+                    result.add(laptop);
+                }
+            }
+
+        }
+
         printSet(result);
-        
     }
 }

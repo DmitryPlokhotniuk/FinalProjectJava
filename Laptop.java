@@ -28,10 +28,25 @@ public class Laptop {
         return "name: " + name + ", RAM: " + totalRAM + ", Hard: " + totalHDD + ", System: " + operSys + ", price: " + price;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
     public int getRam(){
         return this.totalRAM;
     }
 
+    public int getHdd(){
+        return this.totalHDD;
+    }
+
+    public String getOperSys(){
+        return this.operSys;
+    }
+
+    public int getPrice(){
+        return this.price;
+    }
     
 
 
